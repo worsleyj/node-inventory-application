@@ -5,6 +5,11 @@ async function getAllGraphicsCards() {
   return rows;
 }
 
+async function addGraphicsCard(cardName) {
+  await pool.query("INSERT INTO graphics_cards (name) VALUES ($1)", [cardName]);
+}
+
 module.exports = {
   getAllGraphicsCards,
+  addGraphicsCard,
 };
