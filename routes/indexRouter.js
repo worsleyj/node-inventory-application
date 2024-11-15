@@ -13,4 +13,5 @@ indexRouter.get("/create", (req, res) => {
 indexRouter.post("/create", (req, res) => {
   queries.addGraphicsCard(req, res);
 });
+
 module.exports = indexRouter;
