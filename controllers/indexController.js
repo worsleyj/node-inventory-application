@@ -10,8 +10,10 @@ async function getGraphicsCards(req, res) {
 }
 
 async function addGraphicsCard(req, res) {
-  const { cardName } = req.body;
-  await addGraphicsCard(cardName);
+  const { cardName, manufacturer } = req.body;
+  console.log(cardName + " " + manufacturer);
+
+  await db.insertGraphicsCard(cardName);
   res.redirect("/");
 }
 
