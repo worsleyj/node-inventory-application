@@ -9,6 +9,13 @@ async function getGraphicsCards(req, res) {
   );
 }
 
+async function addGraphicsCard(req, res) {
+  const { cardName } = req.body;
+  await addGraphicsCard(cardName);
+  res.redirect("/");
+}
+
 module.exports = {
   getGraphicsCards,
+  addGraphicsCard,
 };
