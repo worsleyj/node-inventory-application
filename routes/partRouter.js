@@ -1,17 +1,17 @@
 const { Router } = require("express");
-const indexRouter = Router();
-const queries = require("../controllers/partController");
+const partRouter = Router();
+const parts = require("../controllers/partController");
 
-indexRouter.get("/", (req, res) => {
-  queries.getParts(req, res);
+partRouter.get("/", (req, res) => {
+  parts.getParts(req, res);
 });
 
-indexRouter.get("/create", (req, res) => {
+partRouter.get("/create", (req, res) => {
   res.render("new_part");
 });
 
-indexRouter.post("/create", (req, res) => {
-  queries.addPart(req, res);
+partRouter.post("/create", (req, res) => {
+  parts.addPart(req, res);
 });
 
-module.exports = indexRouter;
+module.exports = partRouter;
