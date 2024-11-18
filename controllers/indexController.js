@@ -1,23 +1,22 @@
 const db = require("../db/queries");
 
-async function getGraphicsCards(req, res) {
-  const graphicsCards = await db.getAllGraphicsCards();
-  console.log("Graphics Cards: ", graphicsCards);
+async function getParts(req, res) {
+  const parts = await db.getAllParts();
+  console.log("Parts: ", parts);
   res.send(
-    "Graphics Cards Available in Inventory: " +
-      graphicsCards.map((graphicsCard) => graphicsCard.name).join(", ")
+    "Parts Available in Inventory: " + parts.map((part) => part.name).join(", ")
   );
 }
 
-async function addGraphicsCard(req, res) {
-  const { cardName, manufacturer } = req.body;
-  console.log(cardName + " " + manufacturer);
+async function addPart(req, res) {
+  const { partName, manufacturer } = req.body;
+  console.log(partName + " " + manufacturer);
 
-  await db.insertGraphicsCard(cardName);
+  await db.insertPart(partName);
   res.redirect("/");
 }
 
 module.exports = {
-  getGraphicsCards,
-  addGraphicsCard,
+  getParts,
+  addPart,
 };

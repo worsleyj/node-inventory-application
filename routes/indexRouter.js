@@ -3,15 +3,15 @@ const indexRouter = Router();
 const queries = require("../controllers/indexController");
 
 indexRouter.get("/", (req, res) => {
-  queries.getGraphicsCards(req, res);
+  queries.getParts(req, res);
 });
 
 indexRouter.get("/create", (req, res) => {
-  res.render("new_graphics_card");
+  res.render("new_part");
 });
 
 indexRouter.post("/create", (req, res) => {
-  queries.addGraphicsCard(req, res);
+  queries.addPart(req, res);
 });
 
 module.exports = indexRouter;
