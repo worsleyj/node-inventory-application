@@ -26,6 +26,14 @@ VALUES
 ('1080 ti', 'Graphics Card', 'EVGA', 3),
 ('RM850x', 'Power Supply', 'Corsair', 1),
 ('850 EVO', 'SSD', 'Samsung', 4);
+
+CREATE TABLE IF NOT EXISTS manufacturers (
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+name varchar (255));
+
+CREATE TABLE IF NOT EXISTS type (
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+name varchar (255));
 `;
 
 async function main() {
