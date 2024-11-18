@@ -9,10 +9,10 @@ async function getParts(req, res) {
 }
 
 async function addPart(req, res) {
-  const { partName, manufacturer } = req.body;
-  console.log(partName + " " + manufacturer);
+  const { partName, type, manufacturer, quantity } = req.body;
+  // console.log(partName, type, manufacturer, quantity);
 
-  await db.insertPart(partName);
+  await db.insertPart(partName, type, manufacturer, quantity);
   res.redirect("/");
 }
 
