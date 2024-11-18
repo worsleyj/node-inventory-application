@@ -20,6 +20,12 @@ name varchar (255),
 type varchar(255),
 manufacturer varchar(255),
 quantity int);
+
+INSERT INTO parts (name, type, manufacturer, quantity) 
+VALUES 
+('1080 ti', 'Graphics Card', 'EVGA', 3),
+('RM850x', 'Power Supply', 'Corsair', 1),
+('850 EVO', 'SSD', 'Samsung', 4);
 `;
 
 async function main() {
